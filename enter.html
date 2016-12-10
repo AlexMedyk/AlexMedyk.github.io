@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Вхід</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link href = "css/styles.css" rel = "stylesheet" type = "text/css" />
+  <script type = "text/javascript">
+  function valid(form){
+    var nickname = form.nickname.value;
+    var pass = form.pass.value;
+    var fail = false;
+    var message;
+    if(nickname == "" || nickname == " ")
+    {
+    fail = true;
+    message = "Вкажіть нікнейм";
+    }
+  else if(pass == "")
+    {
+    fail = true;
+    message = "Вкажіть пароль";
+    }
+    if(fail)
+      alert(message);
+    else 
+      alert("Усі дані введено");
+
+
+  }
+  </script>
+</head>
+<body>
+<header>
+    <a href ="index.html" title = "Головна сторінка" id = "logo" class="menu" >Головна сторінка</a>
+    <a title = "Всі сезони" href = "AllSeries.html"><span class="menu" >Всі сезони</span></a>
+    <a title = "Трейлер" href = "trailer.html"><span class="menu" >Трейлер</span></a>
+    <span class="right"><input type = "text" class = "search" placeholder = "Пошук по сайту"></span>
+    <a  class="right" href = "registration.html">Реєстрація</a>
+    <a  class="right" href = "enter.html">Вхід</a>
+  </header>
+
+
+<form method ="post" class = "registration" onsubmit = "valid (this)">
+    <h2 id = "registerh" class = "RegH">Вхід</h2>
+    <div class = "form-row">
+        <label>Нікнейм: </label>
+        <input type = "text" name = "nickname" class = "right" placeholder = "Ведіть Ім'я">
+    </div><br>
+    <div class = "form-row">
+        <label>Пароль: </label>
+        <input type = "password"  class = "right" name = "pass" placeholder = "ВВедіть пароль">
+    </div><br>
+    <div class = "form-button">
+        <input class="right" type="submit" value="Увійти">
+   </div><br>
+ </form>
+
+</body>
+ </html>
